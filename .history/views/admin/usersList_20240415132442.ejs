@@ -1,0 +1,73 @@
+<h1 class="flex justify-center font-bold text-4xl mt-5">TÀI KHOẢN</h1>
+<div class="container mx-auto mt-10 flex justify-center">
+    <div class="w-full sm:w-2/3">
+        
+        <table class="table-auto border-collapse border border-gray-300 mt-1">
+        <thead>
+            <tr>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">ID</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">FULLNAME</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">PASSWORD</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">GMAIL</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">ADDRESS</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">CHỨC NĂNG</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let b of users){ %>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.idUser %>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.fullName %>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                       <input type="password">
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.email %>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.address %>
+                    </td>
+
+                    <td class="border border-gray-300 px-4 py-2">
+                        <a href="/admin/usersedit/<%= b.idUser %>"
+                            class="text-gray-500 hover:text-gray-800">Edit</a>
+                        |
+                        <a href="/admin/usersdelete/<%= b.idUser %>"
+                            class="text-red-500 hover:text-red-800">Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- <div id="listuser"></div>
+<script>
+    const ktra=(res)=>{
+        if(!res.ok){throw new Error('Lỗi =' + res.status);}
+        console.log(res);
+        return res.json();
+    }
+    const xulydulieu=(data)=>{
+        // console.log(data);
+        let kq= document.getElementById("listuser");
+        
+        data.forEach(motuser => {
+            kq.innerHTML += `<p> ${motuser.fullName} ${motuser.userName} </p>`;
+        });
+    }
+    const xulyloi=(error)=>{
+        console.log('Lỗi:', error);
+
+    }
+    fetch("http://localhost:4000/users/")
+    .then(ktra)
+    .then(xulydulieu)
+    .catch(xulyloi)
+</script> -->

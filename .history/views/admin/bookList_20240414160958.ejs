@@ -1,0 +1,51 @@
+<div class="container mx-auto mt-10 ">
+    <a href="/admin/bookaddnew" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">ADD</a>
+    <table class="table-auto border-collapse border border-gray-300">
+        
+        <thead>
+            <tr>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">ID</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">TÊN</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">ẢNH</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">THỜI GIAN</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">MÔ TẢ</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">GIÁ</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">LOẠI</th>
+                <th class="border border-gray-300 px-4 py-2 bg-gray-200">CHỨC NĂNG</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let b of list){ %>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.id%>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.name %>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <img src="/images/<%= b.imageURL%>" alt="">
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.updateBook %>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.description %>
+                    </td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <%= b.price %> 
+                    </td>
+                    <!-- <td class="border border-gray-300 px-4 py-2">
+                        <%= b.idCategory %>
+                    </td> -->
+                  
+                    <td class="border border-gray-300 px-4 py-2">
+                        <a href="/admin/bookedit/<%= b.id %>" class="text-gray-500 hover:text-gray-800">Edit</a>
+                        |
+                        <a href="/admin/bookdelete/<%= b.id %>" class="text-red-500 hover:text-red-800">Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>

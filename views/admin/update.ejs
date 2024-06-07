@@ -1,0 +1,41 @@
+<div>
+    <h2 class="flex justify-center items-center font-bold text-4xl h-32">ĐĂNG KÝ</h2>
+    <div class="flex justify-center h-screen">
+      <form name="dky" class="w-96 leading-9">
+        <label for="">Họ và tên</label> <br>
+        <input type="text" id="userName" value="<%= u.userName%>" class="border rounded-md  w-full h-9" required> <br>
+        <label for="">Email</label> <br>
+        <input type="text" id="email"  value="<%= u.email%>"  class="border rounded-md  w-full h-9"> <br>
+        <label for="">Mật khẩu</label> <br>
+        <input type="password" id="password"  value="<%= u.password%>" class="border rounded-md  w-full h-9" required>
+        <button type="button" onclick="dangky()" class="border bg-blue-700 text-white w-full p-2 mt-5 ">Đăng ký</button> <br>
+        <a href="">Bạn chưa đã có tài khoản? <strong> Đăng nhập</strong></a>
+      </form>
+    </div>
+  </div>
+
+<script>
+    const dangky =() =>{
+        let un = document.getElementById('userName').value;
+        let pw = document.getElementById('password').value;
+        let em = document.getElementById('email').value;
+        let data = {
+            userName: un,
+            password:pw,
+            email:em
+        }
+
+    let url = "http://localhost:4000/users/";
+    fetch(url, {
+        method:"POST",
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
+    .then(response => response.json())
+    .then((data)=>{
+        document.dky.reset();
+        console.log(data);
+    })
+    .catch(err => console.log(err))
+  };
+</script>  

@@ -1,0 +1,48 @@
+<div class="h-4/5 mb-10">
+    <h1 class="flex justify-center font-bold text-4xl">GIỎ HÀNG</h1>
+    <div class="container mx-auto mt-10 ">
+        <table class="table-auto border-collapse border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2 bg-gray-200">ID</th>
+                    <th class="border border-gray-300 px-4 py-2 bg-gray-200">TÊN</th>
+                    <th class="border border-gray-300 px-4 py-2 bg-gray-200">ẢNH</th>
+                    <th class="border border-gray-300 px-4 py-2 bg-gray-200">MÔ TẢ</th>
+                    <th class="border border-gray-300 px-4 py-2 bg-gray-200">GIÁ</th>
+                    <!-- <th class="border border-gray-300 px-4 py-2 bg-gray-200">LOẠI</th> -->
+                    <th class="border border-gray-300 px-4 py-2 bg-gray-200">CHỨC NĂNG</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let b of data){ %>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <%= b.id %>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <%= b.name %>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <img  class="w-96" src="/images/<%=b.imageURL %>" alt=" <%=b.imageURL%>">
+                        </td>
+                       
+                        <td class="border border-gray-300 px-4 py-2">
+                            <%= b.description %>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <%= b.price %>
+                        </td>
+                        <!-- <td class="border border-gray-300 px-4 py-2">
+                            <%= b.idCategory %>
+                        </td> -->
+                        <td class="border border-gray-300 px-4 py-2">
+                        
+                            <a href="/cartdelete/<%= b.id %>" class="text-red-500 hover:text-red-800">Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    
+</div>

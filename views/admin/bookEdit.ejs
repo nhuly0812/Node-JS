@@ -1,0 +1,29 @@
+<div class="container mx-auto mt-10 w-96">
+    <h1 class="text-3xl font-bold mb-4">SỬA SẢN PHẨM</h1>
+    <form action="/admin/updatebook" method="POST" class="max-w-sm mx-auto" enctype="multipart/form-data">
+        <label for="name" class="block mb-2">Tên sản phẩm</label>
+        <input value="<%= book.name %>" type="text" name="name" id="name"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+
+        <label for="description" class="block mb-2">Mô tả</label>
+        <input value="<%= book.description %>" name="description" id="description" type="text"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+
+        <label for="imageURL" class="block mb-2">Hình ảnh</label>
+        <input value="<%= book.imageURL %>" name="imageURL" id="imageURL" type="file"
+            class="px-4 py-2 mb-2 w-full rounded-md"><br>
+
+        <label for="price" class="block mb-2">Giá</label>
+        <input value="<%= book.price %>" name="price" id="price" type="text"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+        <label for="idCategory" class="block mb-2">Loại</label>
+        <input value="<%= book.idCategory %>" name="idCategory" id="idCategory" type="text"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+
+
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Lưu
+            database</button>
+
+        <input type="hidden" name="id" value="<%= book.id %>">
+    </form>
+</div>

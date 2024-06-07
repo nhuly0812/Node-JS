@@ -1,0 +1,25 @@
+<div class="container mx-auto mt-10 w-96">
+    <h1 class="text-3xl font-bold mb-4">THÊM SẢN PHẨM</h1>
+    <form action="/admin/addBook" method="POST" class="space-y-2" enctype="multipart/form-data">
+        <label for="name" class="block">Tên sản phẩm</label>
+        <input class="border border-gray-300 rounded px-4 py-2 w-full" type="text" name="name" id="name"><br>
+        <label for="description" class="block">Mô tả</label>
+        <input class="border border-gray-300 rounded px-4 py-2 w-full" name="description" id="description"
+            type="text"><br>
+        <label for="imageURL" class="block">Ảnh</label>
+        <input name="imageURL" id="imageURL" type="file"><br>
+        <label for="price" class="block">Giá</label>
+        <input class="border border-gray-300 rounded px-4 py-2 w-full" name="price" id="price" type="text"><br>
+        <label for="idCategory" class="block">Loại</label>
+        <select name="idCategory" id="">
+            <% for(let b of category){ %>
+                <option value="<%=b.name%>">
+                    <%=b.name%>
+                </option>
+                <%}%>
+
+        </select> <br>
+
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lưu database</button>
+    </form>
+</div>

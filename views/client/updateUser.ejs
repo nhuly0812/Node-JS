@@ -1,0 +1,25 @@
+<div class="container mx-auto mt-10 w-96">
+    <h1 class="text-3xl font-bold mb-4">SỬA TÀI KHOẢN</h1>
+    <form action="/updateUser" method="POST" class="max-w-sm mx-auto">
+        <label for="fullName" class="block mb-2">Tên tài khoản</label>
+        <input value="<%= dl.fullName %>" type="text" name="fullName" id="fullName"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+
+        <label for="password" class="block mb-2">Mật khẩu</label>
+        <input value="<%= dl.password %>" name="password" id="password" type="password"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+
+            <!-- <label for="email" class="block mb-2">Email</label>
+        <input value="<%= dl.email %>" type="text" name="email" id="email"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+
+            <label for="address" class="block mb-2">Địa chỉ</label>
+        <input value="<%= dl.address %>" type="text" name="address" id="address"
+            class="border border-gray-300 px-4 py-2 mb-2 w-full rounded-md"><br>
+       
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Lưu
+            database</button> -->
+
+        <input type="hidden" name="id" value="<%= dl.idUser %>">
+    </form>
+</div>

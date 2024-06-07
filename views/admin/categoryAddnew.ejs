@@ -1,0 +1,18 @@
+<div class="container mx-auto mt-10 w-96">
+    <h1 class="text-3xl font-bold mb-4">THÊM DANH MỤC</h1>
+    <form action="/admin/add" method="POST" class="space-y-4">
+        <label for="name" class="block">Tên danh mục</label>
+        <input class="border border-gray-300 rounded px-4 py-2 w-full" type="text" name="name" id="name"><br>
+       
+        <label class="block">Ẩn hiện</label>
+        <div>
+            <input type="radio" name="hidden" value="1" id="hidden1" class="mr-2" checked>
+            <label for="hidden1">Hiện</label>
+        </div>
+        <div>
+            <input type="radio" name="hidden" value="0" id="hidden2" class="mr-2">
+            <label for="hidden2">Ẩn</label>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lưu database</button>
+    </form>
+</div>
